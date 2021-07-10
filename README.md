@@ -5,7 +5,7 @@ Usage:
 1) Clone the repository
 2) Install requirements:
  ```pip install -r requirements.txt```
-4) Usage Example: python3 webshot.py -f {filename} -o {OutputFolder}
+4) Usage Example: ```python3 webshot.py -f {filename} -o {OutputFolder}```
 
 ```optional arguments:
   -h, --help        show this help message and exit
