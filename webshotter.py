@@ -15,10 +15,10 @@ args = parms.args
 
 domains = np.array(open(args.filename).read().splitlines())
 
-domains = np.array_split(domains, 3)
+domains = np.array_split(domains, 6)
 
 
-def take_shot(a,n):
+def take_shot(a):
     for y in domains[int(a)]:
         try:
             print("[+] Trying to screenshot: ",y)
@@ -36,15 +36,24 @@ def take_shot(a,n):
 
 
 def start_task():
-    t1 = mp.Process(target=take_shot, args=(str(0),"a"))
-    t2 = mp.Process(target=take_shot, args=(str(1),"b"))
-    t3 = mp.Process(target=take_shot, args=(str(2),"c"))
+    t1 = mp.Process(target=take_shot, args=(str(0)))
+    t2 = mp.Process(target=take_shot, args=(str(1)))
+    t3 = mp.Process(target=take_shot, args=(str(2)))
+    t4 = mp.Process(target=take_shot, args=(str(3)))
+    t5 = mp.Process(target=take_shot, args=(str(4)))
+    t6 = mp.Process(target=take_shot, args=(str(5)))
     t1.start()
     t2.start()
     t3.start()
+    t4.start()
+    t5.start()
+    t6.start()
     t1.join()
     t2.join()
     t3.join()
+    t4.join()
+    t5.join()
+    t6.join()
     print("[++] Finished")
     driver.quit()
 
