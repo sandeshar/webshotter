@@ -20,26 +20,32 @@ domains = np.array_split(domains, 3)
 
 def take_shot(a):
     for y in domains[int(a)]:
-        driver.get(formaturl(y))
-        rem = ["https://", "http://"]
-        path = f"{args.output}/{y}.png"
-        for strToReplace in rem:
-            path = path.replace(strToReplace, "")
-        driver.save_screenshot(path)
+        try:
+            print("[+] Trying to screenshot: ",y)
+            driver.get(formaturl(y))
+            rem = ["https://", "http://"]
+            path = f"{args.output}/{y}.png"
+            for strToReplace in rem:
+                path = path.replace(strToReplace, "")
+            driver.save_screenshot(path)
+        except:
+            print("[--]Failed to screen shot: ",y)
+        else:
+            print("Success ",y)
     driver.quit()
 
 
 def start_task():
     t1 = mp.Process(target=take_shot, args=(str(0)))
-    t1.start()
     t2 = mp.Process(target=take_shot, args=(str(1)))
-    t2.start()
     t3 = mp.Process(target=take_shot, args=(str(2)))
+    t1.start()
+    t2.start()
     t3.start()
-    
     t1.join()
     t2.join()
     t3.join()
+    print("[++] Finished")
     driver.quit()
 
 
