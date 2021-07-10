@@ -18,7 +18,7 @@ domains = np.array(open(args.filename).read().splitlines())
 domains = np.array_split(domains, 3)
 
 
-def take_shot(a):
+def take_shot(a,n):
     for y in domains[int(a)]:
         try:
             print("[+] Trying to screenshot: ",y)
@@ -36,9 +36,9 @@ def take_shot(a):
 
 
 def start_task():
-    t1 = mp.Process(target=take_shot, args=(str(0)))
-    t2 = mp.Process(target=take_shot, args=(str(1)))
-    t3 = mp.Process(target=take_shot, args=(str(2)))
+    t1 = mp.Process(target=take_shot, args=(str(0),"a"))
+    t2 = mp.Process(target=take_shot, args=(str(1),"b"))
+    t3 = mp.Process(target=take_shot, args=(str(2),"c"))
     t1.start()
     t2.start()
     t3.start()
