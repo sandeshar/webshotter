@@ -15,4 +15,5 @@ Usage:
                     development) (Will be coming soon)
 ```
 You can contribute to this project.
-contact me at:- sandesharyal.135@gmail.com
+
+Contact me at:- sandesharyal.135@gmail.com
