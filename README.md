@@ -12,7 +12,7 @@ Usage:
   -f , --filename   Name of file containing domains/subdomains
   -o , --output     Name of folder to save the output
   -t , --tabs       Number of tabs to open on browser(Currently in
-                    development) (Will be coming soon)```
-
+                    development) (Will be coming soon)
+```
 You can contribute to this project.
 contact me at:- sandesharyal.135@gmail.com
