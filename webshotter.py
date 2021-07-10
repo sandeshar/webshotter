@@ -31,11 +31,12 @@ def take_shot(a):
 
 def start_task():
     t1 = mp.Process(target=take_shot, args=(str(0)))
-    t2 = mp.Process(target=take_shot, args=(str(1)))
-    t3 = mp.Process(target=take_shot, args=(str(2)))
     t1.start()
+    t2 = mp.Process(target=take_shot, args=(str(1)))
     t2.start()
+    t3 = mp.Process(target=take_shot, args=(str(2)))
     t3.start()
+    
     t1.join()
     t2.join()
     t3.join()
