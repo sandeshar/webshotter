@@ -24,7 +24,7 @@ def take_shot(a):
             print("[+] Trying to screenshot: ",y)
             driver.get(formaturl(y))
             rem = ["https://", "http://"]
-            path = f"{args.output}/{driver.current_url}.png"
+            path = f"{args.output}/{y}.png"
             for strToReplace in rem:
                 path = path.replace(strToReplace, "")
             driver.save_screenshot(path)
