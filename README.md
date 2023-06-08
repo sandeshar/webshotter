@@ -18,9 +18,8 @@ Usage:
 If you want to increase speed of screenshot you can do it manually by editing webshotter.py
 Steps:-
 1) Split the array into how fast  you want. E.g
-
-
-```domains = np.array_split(domains, 3)``` -> Change 3 to value you want to (his divides your file to three parts and are processed at once to increase speed three times than usual)
+```domains = np.array_split(domains, 3)```
+-> Change 3 to the value you want (this divides your file into three parts and are processed at once. This increases speed three times than usual)
 
 
 2) After step(1) duplicate the code 
@@ -30,5 +29,3 @@ Steps:-
  Automatic steps will be added soon. (Note: Don't duplicate multiple times if your internet and pc is slow)
  
  You can contribute to this project.
-
-Contact me at:- sandesharyal.135@gmail.com
